@@ -6164,6 +6164,7 @@ pv.SvgScene.rule = function(scenes) {
         "y2": s.top + s.height,
         "stroke": stroke.color,
         "stroke-opacity": stroke.opacity,
+        "stroke-dasharray": s.strokeDasharray,
         "stroke-width": s.lineWidth / this.scale
       });
     e = this.append(e, scenes, i);
@@ -8497,6 +8498,7 @@ pv.Rule.prototype = pv.extend(pv.Mark)
     .property("width", Number)
     .property("height", Number)
     .property("lineWidth", Number)
+    .property("strokeDasharray", String)
     .property("strokeStyle", pv.color);
 
 pv.Rule.prototype.type = "rule";
@@ -8546,6 +8548,7 @@ pv.Rule.prototype.defaults = new pv.Rule()
     .extend(pv.Mark.prototype.defaults)
     .lineWidth(1)
     .strokeStyle("black")
+    .strokeDasharray("")
     .antialias(false);
 
 /**
